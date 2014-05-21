@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-__author__ = 'Yujin Kang'
-__email__ = '92yujink@gmail.com'
-
 import os
 import string
 import sys
