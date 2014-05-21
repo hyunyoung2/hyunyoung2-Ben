@@ -5,8 +5,7 @@
     for the PAN 2013 Plagiarism Detection task.
 """
 from __future__ import division, unicode_literals
-#__author__ = 'Martin Potthast'
-#__email__ = 'martin.potthast@uni-weimar.de'
+
 __version__ = '3.0'
 
 import codecs
