@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-__version__ = '7.0'
-
-
 import os
 import string
 import sys
