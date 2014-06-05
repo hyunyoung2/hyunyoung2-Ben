@@ -1,0 +1,44 @@
+유스케이스명 : 표절 검사 User Interface 사용
+액터명 : 사용자
+유스케이스 개요 및 설명 : 사용자가 Text Alignment와 Source Retrieval 기능을 수행 함.
+사전 조건 : 의심 문서의 디렉토리를 선택 해야 함.
+사후 조건 :
+정상 흐름 : 1. 사용자가 의심 문서의 디렉토리를 선택 함.
+	2. 사용자가 Text Alignment와 Source Retrieval 기능을 선택 함.
+	3. Source Retrieval은 로그 파일을 출력 함.
+	4. Text Alignment는 XML 파일을 출력 함.
+대안 흐름 :
+예외 흐름 :
+
+
+
+유스케이스명 : Text Alignment 기능 사용
+액터명 : Text Alignment 사용 모듈
+유스케이스 개요 및 설명 : Text Alignment 기능을 사용 하고 XML 파일을 출력 함.
+사전 조건 : Source Retrieval을 먼저 수행 하고 소스 문서들을 다운로드 받아 놓아야 함.
+사후 조건 :
+정상 흐름 : 1. 다운로드 받은 텍스트 파일을 다운로드 함.
+	2. 의심 문서와 다운 받은 소스 문서들을 비교 함.
+	2-1. 불용어를 제거 함.
+	2-2. 중복 단어를 출력 하는 자료 구조를 구성 함.
+	2-3. 형태소를 분석하여 정밀 비교 분석 함.
+	3. XML 파일을 출력 함.
+대안 흐름 :
+예외 흐름 :
+
+
+
+유스케이스명 : Source Retrieval 기능 사용
+액터명 : Source Retrieval 사용 모듈(Text Alignment 등)
+유스케이스 개요 및 설명 : Source Retrieval 기능을 사용 하고 로그 파일을 출력 함.
+사전 조건 : Web 검색을 위한 인터넷에의 연결, Web Search API의 토큰 확보
+사후 조건 :
+정상 흐름 : 1. 의심 문서를 읽어 옴.
+	2. Web에서 소스 문서를 검색 함.
+	2-1. 효율적인 쿼리를 생성 함.
+	2-1-1. 형태소를 분석하여 중요 단어를 추출 함.
+	2-1-2. TF-IDF를 적용하여 중요 단어를 추출 함.
+	3. URL을 다운로드 함.
+	4. 수집한 정보를 바탕으로 로그 파일을 생성 함.
+대안 흐름 : 인터넷 연결이 되어있지 않은 경우 local database를 사용하여 문서 검색
+예외 흐름 : URL이 잘못된 경우 oracle checking을 통해 다음 우선 순위의 URL을 다운로드 함.
