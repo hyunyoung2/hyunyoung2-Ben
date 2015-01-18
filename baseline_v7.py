@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-__version__ = '7.0'
-
-
 import os
 import string
 import sys
@@ -97,7 +94,6 @@ def serialize_features(susp, src, features, outdir):
         feature.setAttribute('source_offset', str(f[0][0]))
         feature.setAttribute('source_length', str(f[0][1] - f[0][0]))
         root.appendChild(feature)
-
     doc.writexml(open(outdir + susp.split('.')[0] + '-'
                       + src.split('.')[0] + '.xml', 'w'),
                  encoding='utf-8')
